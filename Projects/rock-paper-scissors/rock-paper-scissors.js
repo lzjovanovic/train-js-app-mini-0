@@ -17,7 +17,7 @@ function duel() {
 }
 function judge(i, j) {
   if (i == j) {
-    result = "tie";
+    result = "Tie";
   } else if (i == gestures[0]) {
     if (j == gestures[1]) {
       result = "you lose";
