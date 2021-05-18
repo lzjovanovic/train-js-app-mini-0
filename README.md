@@ -4,4 +4,4 @@ js mini games, apps practice.
 
 ## projects list
 
-1.
+1. Project: Rock Paper Scissors
