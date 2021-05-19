@@ -1,44 +1,44 @@
 // gesture duel
 
-// jquery
+const choices = ["paper", "scissor", "stone"];
 
-let player = "";
-let ai = "";
-let result = "";
-const gestures = ["paper", "scissor", "stone"];
-
-function duel() {
-  player = $(this).attr("value");
-  ai = gestures[Math.floor(Math.random() * 3)];
+function play_round(e) {
+  const player = e.target.value;
+  const ai = choices[Math.floor(Math.random() * 3)];
+  document.querySelector(
+    ".player"
+  ).innerHTML = `<span>you choose  ${player} </span>`;
+  document.querySelector(".ai").innerHTML = `<span>AI choose ${ai} </span>`;
   judge(player, ai);
-  $(".player").html("<span>you choose " + player + "</span>");
-  $(".ai").html("<span>AI choose " + ai + "</span>");
-  $(".result").html("<span>" + result + "</span>");
 }
 function judge(i, j) {
+  let result;
   if (i == j) {
     result = "Tie";
-  } else if (i == gestures[0]) {
-    if (j == gestures[1]) {
+  } else if (i == choices[0]) {
+    if (j == choices[1]) {
       result = "you lose";
     } else {
       result = "you win";
     }
-  } else if (i == gestures[1]) {
-    if (j == gestures[2]) {
+  } else if (i == choices[1]) {
+    if (j == choices[2]) {
       result = "you lose";
     } else {
       result = "you win";
     }
-  } else if (i == gestures[2]) {
-    if (j == gestures[0]) {
+  } else if (i == choices[2]) {
+    if (j == choices[0]) {
       result = "you lose";
     } else {
       result = "you win";
     }
   }
-  return result;
+  document.querySelector(".result").innerHTML = `<span> ${result} </span>`;
 }
-$(document).ready(function () {
-  $(".button").bind("click", duel);
+
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .querySelectorAll(".button")
+    .forEach((btn) => btn.addEventListener("click", play_round));
 });
