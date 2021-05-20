@@ -9,17 +9,33 @@
   </head>
 
   <body>
-    <div class="panel">
-      <input type="submit" value="paper" id="paper" class="button" />
-      <input type="submit" value="scissor" id="scissor" class="button" />
-      <input type="submit" value="stone" id="stone" class="button" />
-    </div>
+    <main>
+      <div class="board">
+        <div class="panel">
+          <input type="submit" value="paper" class="button" />
+          <input type="submit" value="scissor" class="button" />
+          <input type="submit" value="stone" class="button" />
+        </div>
+      </div>
+      <div class="board">
+        <h2 class="result-match">Game Start</h2>
+        <p class="result">try to win 3 points.</p>
 
-    <div class="board">
-      <p class="player"></p>
-      <p class="ai"></p>
-      <p class="result"></p>
-    </div>
+        <div class="row">
+          <div class="grid">
+            <p class="score-player">0</p>
+            <p>You choose</p>
+            <p class="play-player"></p>
+          </div>
+          <div class="grid">
+            <p class="score-ai">0</p>
+            <p>AI choose</p>
+            <p class="play-ai"></p>
+          </div>
+        </div>
+        <a href="rock-paper-scissors.html" class="reset">Retry</a>
+      </div>
+    </main>
   </body>
   <script src="rock-paper-scissors.js"></script>
 </html>
